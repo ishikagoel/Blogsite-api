@@ -41,8 +41,8 @@ app.use("/api/posts",postRoute)
 app.use("/api/categories",categoryRoute)
 console.log("hello world");
 
+var port = process.env.PORT || 3000
 
-
-app.listen("5000", () => {
+app.listen(port, () => {
     console.log("Backend is running");
 });
