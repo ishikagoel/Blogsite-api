@@ -2,10 +2,10 @@ const express = require("express");
 const app = express();
 const dotenv=require('dotenv');
 const mongoose=require('mongoose');
-const authRoute=require("./routes/auth");
-const userRoute=require("./routes/users");
-const postRoute=require("./routes/posts");
-const categoryRoute=require("./routes/categories");
+const authRoute=require("./api/routes/auth");
+const userRoute=require("./api/routes/users");
+const postRoute=require("./api/routes/posts");
+const categoryRoute=require("./api/routes/categories");
 const multer=require("multer");
 
 
