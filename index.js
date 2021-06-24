@@ -43,6 +43,11 @@ console.log("hello world");
 
 var port = process.env.PORT || 3000
 
+app.get("/",(req,res)=>{
+    console.log("Server is running");
+    res.send("started");
+})
+
 app.listen(port, () => {
     console.log("Backend is running");
 });
