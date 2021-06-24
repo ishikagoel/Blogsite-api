@@ -27,16 +27,14 @@ const storage=multer.diskStorage({
        // cb(null,pp.jpg);
     },
 });
+const upload=multer({storage:storage});
+app.post("/api/upload",upload.single("file"),(req,res)=>{
+    res.status(200).json("file has been uploaded")
+});
 app.get("/",(req,res)=>{
     console.log("Server is running");
     res.send("started");
 })
-
-const upload=multer({storage:storage});
-app.post("/api/upload",upload.single("file"),(req,res)=>{
-    res.status(200).json("file has been uploaded")
-}); 
-
 
 
 app.use("/api/auth",authRoute)
