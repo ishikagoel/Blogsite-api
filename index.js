@@ -27,6 +27,10 @@ const storage=multer.diskStorage({
        // cb(null,pp.jpg);
     },
 });
+app.get("/",(req,res)=>{
+    console.log("Server is running");
+    res.send("started");
+})
 
 const upload=multer({storage:storage});
 app.post("/api/upload",upload.single("file"),(req,res)=>{
@@ -41,12 +45,9 @@ app.use("/api/posts",postRoute)
 app.use("/api/categories",categoryRoute)
 console.log("hello world");
 
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 3000;
 
-app.get("/",(req,res)=>{
-    console.log("Server is running");
-    res.send("started");
-})
+
 
 app.listen(port, () => {
     console.log("Backend is running");
